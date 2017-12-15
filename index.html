@@ -10,7 +10,7 @@
       	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     	<title>Lista de Compras</title>
-    	<meta charset="utf-8">
+    	<meta charset="utf-8">    	
   	</head>
   	<body>
     	<nav>
@@ -18,18 +18,21 @@
 	      		<a href="#" class="brand-logo center">Lista de Compras</a>	      
 	    	</div>
 	  	</nav>
-	  	<div>
-	  		<div></div>
-	  		<ul class="collection">
-		      	<li class="collection-item">Frango</li>
-		      	<li class="collection-item">Carne</li>
-		      	<li class="collection-item">Arroz</li>
-		      	<li class="collection-item">Macarrão</li>
-		    </ul>
+	  	<div class="container">
+	  		<br />
+	  		<div class="row">
+	  			<div class="input-field">
+	  				<input id="new-product" type="text" />
+	  				<label for="new-product">Adicionar novo produto</label>	
+	  				<a id="bt-add-product" class="waves-effect waves-light btn right">OK</a> 
+	  			</div>
+	  		</div>
+	  		<ul id="lista" class="collection"></ul>
 	  	</div>
 
     	<!--Import jQuery before materialize.js-->
       	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      	<script type="text/javascript" src="js/main.js"></script>
   	</body>
 </html>

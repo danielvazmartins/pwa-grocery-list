@@ -1,8 +1,12 @@
 let cacheName = 'pwa-grocery-list-v.1.0.0';
 let filesToCache = [
     './',
-    'index.html',
-    'js/main.js'
+    '/index.html',
+    '/js/main.js',
+    '/service-worker.js',
+    '/js/lib/jquery-3.2.1.min.js',
+    '/js/lib/materialize.min.js',
+    '/css/materialize.min.css'
 ];
 
 self.addEventListener('install', function (e) {

@@ -1,4 +1,5 @@
-var produtos = [];
+var produtos = window.localStorage.getItem('produtos') || '[]';
+produtos = JSON.parse(produtos);
 
 $(function(){
 	var init = function() {
@@ -10,6 +11,7 @@ $(function(){
 		var produto = $("#new-product").val().trim();
 		if ( produto.length > 0 ) {
 			produtos.push(produto);
+			window.localStorage.setItem('produtos', JSON.stringify(produtos));
 			$("#new-product").val("");
 			reloadProdutos();
 		}		
@@ -25,7 +27,7 @@ $(function(){
 	function registerServiceWork() {
 		if ('serviceWorker' in navigator) {
 	    	navigator.serviceWorker
-	    	.register('js/service-worker.js')
+	    	.register('/service-worker.js')
 		    .then(function(reg) {
 		        console.log('Service worker Registered');
 		    })

@@ -2,11 +2,13 @@ var produtos = window.localStorage.getItem('produtos') || '[]';
 produtos = JSON.parse(produtos);
 
 $(function(){
+	// Funcao de inicializacao
 	var init = function() {
 		reloadProdutos();
 		registerServiceWork();
 	}
 
+	// Adicionar produto
 	$("#bt-add-product").click(function() {
 		var produto = $("#new-product").val().trim();
 		if ( produto.length > 0 ) {
@@ -15,8 +17,9 @@ $(function(){
 			$("#new-product").val("");
 			reloadProdutos();
 		}		
-	});
+	});	
 
+	// Ativar ou desativar modo Full Screem
 	$("#full-screen").click(function(e) {
 		e.preventDefault();
 
@@ -51,14 +54,8 @@ $(function(){
 			$(".material-icons", this).text("fullscreen_exit");
 		}
 	});
-
-	function reloadProdutos() {
-		$("#lista").empty();
-		produtos.map(function(produto) {
-			$("#lista").append("<li class='collection-item'>" + produto + "</li>");
-		});
-	}
 	
+	// Registrar o service worker
 	function registerServiceWork() {
 		if ('serviceWorker' in navigator) {
 	    	navigator.serviceWorker
@@ -74,3 +71,19 @@ $(function(){
 
 	init();	
 });
+
+// Recarregar lista de produtos
+function reloadProdutos() {
+	$("#lista").empty();
+	produtos.map(function(produto, index) {
+		$("#lista").append("<li class='collection-item'>" + produto + "<a href='javascript:removeProduct(" + index + ")' class='secondary-content'><i class='material-icons'>clear</i></a></li>");
+	});
+}
+
+// Remover produto
+function removeProduct(position) {
+	console.log(position);
+	// Remove o produto do array
+	produtos.splice(position, 1);
+	reloadProdutos();
+}

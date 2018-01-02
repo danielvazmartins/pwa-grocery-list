@@ -1,4 +1,4 @@
-let cacheName = 'pwa-grocery-list-v.1.0.0';
+let cacheName = 'pwa-grocery-list-v.1.0.1';
 let filesToCache = [
     './',
     '/index.html',

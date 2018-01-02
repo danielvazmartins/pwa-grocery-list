@@ -1,7 +1,7 @@
 # pwa-grocery-list
 Lista de Compras utilizando recursos do PWA
 
-# Executar
+## Executar
 - Abrir o index.html atravez de um servidor web
 http-server .
 
@@ -10,7 +10,10 @@ http-server .
 - Base href para produção (index.html) 
 <base href="/pwa-grocery-list/">
 
-# Fontes
+## Github Page
+https://danielvazmartins.github.io/pwa-grocery-list/
+
+## Fontes
 https://www.schoolofnet.com/curso-progressive-web-apps/
 http://materializecss.com/
 https://whatwebcando.today/

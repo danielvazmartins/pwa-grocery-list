@@ -1,4 +1,4 @@
-let cacheName = 'pwa-grocery-list-v.1.0.1';
+let cacheName = 'pwa-grocery-list-v.2.0.2';
 let filesToCache = [
     './',
     '/index.html',
@@ -6,7 +6,9 @@ let filesToCache = [
     '/js/service-worker.js',
     '/js/lib/jquery-3.2.1.min.js',
     '/js/lib/materialize.min.js',
-    '/css/materialize.min.css'
+    '/css/materialize.min.css',
+    '/fonts/roboto/Roboto-Regular.woff2',
+    '/fonts/roboto/*'
 ];
 
 self.addEventListener('install', function (e) {
